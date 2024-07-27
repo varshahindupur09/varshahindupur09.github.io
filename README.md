@@ -1,5 +1,4 @@
 
-Memory updated
 Varsha Hindupur's GitHub Overview
 Welcome to my GitHub profile! Here, you will find a collection of my projects and contributions in the fields of data science, machine learning, and generative AI. My repository includes various projects showcasing my skills and interests. Below is a brief overview of some of the key projects:
 
