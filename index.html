@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Varsha Hindupur | Portfolio</title>
+<meta name="description" content="Varsha Hindupur, Software Engineer 3 at Jack Henry. Generative AI, full-stack and platform engineering in regulated financial services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F2FB; --surface:#FFFFFF; --ink:#1E1B3A; --muted:#5C5878; --line:#DEDAF0;
+  --violet:#6A4CE0; --coral:#EF5B6E; --marigold:#F2A230; --teal:#1F9E95; --sky:#2F86E0; --pink:#D946A8;
+  --violet-soft:#ECE7FF; --coral-soft:#FFE6E9; --marigold-soft:#FFF1DA; --teal-soft:#DDF5F2; --sky-soft:#E1EEFD; --pink-soft:#FBE4F3;
+  --hero:#1E1B3A; --hero-ink:#FFFFFF;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#13112A; --surface:#1D1A3C; --ink:#EEEBFA; --muted:#ABA6C8; --line:#332F5C;
+  --violet:#9C85FF; --coral:#FF7D8E; --marigold:#FFBC57; --teal:#4FD1C5; --sky:#6AB0FF; --pink:#F07ACB;
+  --violet-soft:#2A2458; --coral-soft:#3E2236; --marigold-soft:#3B2E22; --teal-soft:#1B3A42; --sky-soft:#1C2E4E; --pink-soft:#3A2045;
+  --hero:#0C0A1E;
+}}
+:root[data-theme="dark"]{
+  --paper:#13112A; --surface:#1D1A3C; --ink:#EEEBFA; --muted:#ABA6C8; --line:#332F5C;
+  --violet:#9C85FF; --coral:#FF7D8E; --marigold:#FFBC57; --teal:#4FD1C5; --sky:#6AB0FF; --pink:#F07ACB;
+  --violet-soft:#2A2458; --coral-soft:#3E2236; --marigold-soft:#3B2E22; --teal-soft:#1B3A42; --sky-soft:#1C2E4E; --pink-soft:#3A2045;
+  --hero:#0C0A1E;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--violet)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1140px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(2rem,4.5vw,3.1rem);font-weight:800;letter-spacing:-.02em}
+h3{font-size:1.28rem;font-weight:600}
+p{margin:0 0 1em}
+.lede{color:var(--muted);max-width:62ch;margin-top:.75rem}
+
+/* nav */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.2rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.brand i{display:inline-flex;gap:3px}
+.brand i b{width:8px;height:8px;border-radius:50%}
+.navlinks{display:flex;gap:1.35rem;list-style:none;margin:0;padding:0;align-items:center}
+.navlinks a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.navlinks a:hover{color:var(--violet)}
+.navlinks .resume{background:var(--violet);color:#fff;padding:.45rem 1rem;border-radius:999px}
+.navlinks .resume:hover{background:var(--coral);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.4rem .7rem;font:inherit}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .navlinks{position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--paper);padding:1rem 1.25rem 1.5rem;border-bottom:1px solid var(--line);display:none}
+  .navlinks.open{display:flex}
+}
+
+/* hero: colorful band */
+.hero{background:var(--hero);color:var(--hero-ink);padding:clamp(3rem,8vw,6rem) 0 clamp(3rem,6vw,4.5rem);position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none}
+.hero::before{width:420px;height:420px;background:var(--violet);top:-140px;right:-80px}
+.hero::after{width:320px;height:320px;background:var(--coral);bottom:-160px;left:20%}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(3rem,9vw,6.4rem);font-weight:800;letter-spacing:-.035em;line-height:.92}
+.hero h1 span{display:block;color:var(--marigold)}
+.hero .role{font-family:var(--display);font-size:clamp(1.15rem,2.2vw,1.5rem);margin:1.25rem 0 .5rem}
+.hero .sub{color:rgba(255,255,255,.75);max-width:48ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid currentColor;color:inherit}
+.btn.solid{background:var(--marigold);border-color:var(--marigold);color:#1E1B3A}
+.btn:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+.orgs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.25rem}
+.orgs a{font-size:.85rem;padding:.35rem .8rem;border-radius:999px;text-decoration:none;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22)}
+.orgs a:hover{background:rgba(255,255,255,.22)}
+
+.stream{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:1.25rem;backdrop-filter:blur(6px)}
+.stream-head{display:flex;justify-content:space-between;font-size:.8rem;opacity:.75;margin-bottom:.9rem}
+.stream-head .live::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--marigold);margin-right:.45rem;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.msg{border-left:4px solid var(--c);padding:.55rem .85rem;margin-bottom:.6rem;background:rgba(255,255,255,.06);border-radius:0 10px 10px 0;opacity:0;transform:translateY(10px);animation:arrive .5s forwards}
+.msg:nth-child(2){animation-delay:.15s}.msg:nth-child(3){animation-delay:.4s}.msg:nth-child(4){animation-delay:.65s}.msg:nth-child(5){animation-delay:.9s}.msg:nth-child(6){animation-delay:1.15s}.msg:nth-child(7){animation-delay:1.4s}
+@keyframes arrive{to{opacity:1;transform:none}}
+.msg b{font-family:var(--display);font-weight:600;display:block;font-size:1rem}
+.msg span{font-size:.82rem;opacity:.75}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr}}
+
+/* impact strip */
+.impact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:-2rem;position:relative;z-index:2}
+.tile{background:var(--bg);border-radius:16px;padding:1.25rem 1.3rem;border:1px solid var(--line)}
+.tile strong{display:block;font-family:var(--display);font-size:2rem;font-weight:800;color:var(--fg);letter-spacing:-.02em;line-height:1.1}
+.tile span{font-size:.92rem;color:var(--ink)}
+
+/* sections */
+section.block{padding:clamp(3.5rem,8vw,6rem) 0}
+section.tint{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:240px 1fr;gap:3rem;margin-top:2rem}
+.portrait{aspect-ratio:1;border-radius:50%;background:conic-gradient(from 200deg,var(--violet),var(--coral),var(--marigold),var(--teal),var(--sky),var(--violet));padding:8px}
+.portrait div{width:100%;height:100%;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:4.5rem;color:var(--violet);letter-spacing:-.04em;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem}
+.fact{padding:1rem;border-radius:12px;background:var(--bg)}
+.fact strong{display:block;font-family:var(--display);font-size:1.05rem;color:var(--fg)}
+.fact span{color:var(--ink);font-size:.95rem}
+.social{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.5rem}
+.social a{font-weight:600;text-decoration:none;padding:.4rem .9rem;border-radius:999px;border:2px solid var(--violet);color:var(--violet)}
+.social a:hover{background:var(--violet);color:#fff}
+@media (max-width:760px){.about-grid{grid-template-columns:1fr}.portrait{width:170px}}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;margin-top:2.5rem}
+.skill{border-radius:18px;padding:1.5rem;background:var(--bg);border-top:6px solid var(--fg)}
+.skill h3{color:var(--fg);margin-bottom:.4rem}
+.skill p{color:var(--ink);font-size:.97rem;opacity:.85}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:.6rem 0 0}
+.tags li{list-style:none;font-size:.82rem;padding:.22rem .65rem;border-radius:999px;background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.filters button{font:600 .9rem var(--body);padding:.45rem 1rem;border-radius:999px;border:2px solid var(--fg,var(--ink));background:transparent;color:var(--fg,var(--ink));cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--fg,var(--ink));color:var(--paper)}
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem;margin-top:1.75rem}
+.proj{background:var(--paper);padding:1.4rem;text-align:left;border:1px solid var(--line);border-left:6px solid var(--fg);border-radius:14px;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:.5rem;min-height:200px}
+.proj:hover{background:var(--bg)}
+.proj .kind{font-size:.8rem;font-weight:600;color:var(--fg)}
+.proj p{color:var(--muted);font-size:.95rem;margin:0}
+.proj .more{margin-top:auto;font-size:.88rem;font-weight:600;color:var(--fg)}
+.proj .star{font-size:.75rem;font-weight:600;background:var(--fg);color:var(--paper);padding:.1rem .5rem;border-radius:999px;align-self:flex-start}
+.proj[hidden]{display:none}
+
+dialog{border:0;border-radius:18px;padding:0;max-width:640px;width:calc(100% - 2rem);background:var(--surface);color:var(--ink);border-top:8px solid var(--fg,var(--violet))}
+dialog::backdrop{background:rgba(20,15,50,.65)}
+.dlg{padding:2rem;position:relative}
+.dlg h3{font-size:1.6rem;margin-bottom:.5rem}
+.dlg .kind{color:var(--fg);font-weight:600;font-size:.9rem}
+.dlg p{color:var(--muted);margin-top:1rem}
+.dlg-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.dlg .btn{color:var(--fg);}
+.dlg .btn.solid{background:var(--fg);border-color:var(--fg);color:var(--paper)}
+.close{position:absolute;top:.8rem;right:.8rem;background:none;border:0;font-size:1.6rem;color:var(--muted);cursor:pointer;line-height:1;padding:.3rem .5rem}
+
+/* timeline */
+.timeline{list-style:none;padding:0;margin:2.5rem 0 0;position:relative}
+.timeline::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--violet),var(--coral),var(--marigold),var(--teal),var(--sky))}
+.timeline>li{position:relative;padding:0 0 2.6rem 3rem}
+.timeline>li::before{content:"";position:absolute;left:2px;top:.3rem;width:21px;height:21px;border-radius:50%;background:var(--fg);box-shadow:0 0 0 5px var(--bg)}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.5rem}
+.job-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline}
+.when{font-size:.85rem;font-weight:600;padding:.2rem .7rem;border-radius:999px;background:var(--bg);color:var(--fg)}
+.where{color:var(--fg);font-weight:600;font-size:.98rem;margin:.2rem 0 .7rem}
+.job ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.job ul li{margin-bottom:.4rem;max-width:80ch}
+.job ul li::marker{color:var(--fg)}
+
+/* writing */
+.writing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:2.5rem}
+.post{border-radius:16px;padding:1.3rem;background:var(--bg)}
+.post .src{font-size:.8rem;font-weight:600;color:var(--fg)}
+.post h3{margin:.35rem 0 .5rem;font-size:1.15rem}
+.post h3 a{color:var(--ink);text-decoration:none}
+.post h3 a:hover{color:var(--fg)}
+.post p{color:var(--ink);opacity:.8;font-size:.95rem;margin:0}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:2rem}
+
+/* contact */
+.contact-box{background:linear-gradient(135deg,var(--violet),var(--pink) 55%,var(--coral));color:#fff;border-radius:28px;padding:clamp(2rem,6vw,4rem)}
+.contact-box .lede{color:rgba(255,255,255,.88)}
+.contact-box .big{display:inline-block;margin-top:1.4rem;font-family:var(--display);font-size:clamp(1.4rem,4.2vw,2.6rem);font-weight:800;letter-spacing:-.02em;word-break:break-word;color:#fff;text-decoration-color:var(--marigold);text-decoration-thickness:4px;text-underline-offset:8px}
+.contact-box .social a{border-color:#fff;color:#fff}
+.contact-box .social a:hover{background:#fff;color:var(--violet)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.theme-toggle{background:none;border:2px solid var(--line);color:var(--ink);border-radius:999px;padding:.35rem .9rem;font:600 .85rem var(--body);cursor:pointer}
+
+/* color helpers */
+.c-violet{--fg:var(--violet);--bg:var(--violet-soft);--c:var(--violet)}
+.c-coral{--fg:var(--coral);--bg:var(--coral-soft);--c:var(--coral)}
+.c-marigold{--fg:var(--marigold);--bg:var(--marigold-soft);--c:var(--marigold)}
+.c-teal{--fg:var(--teal);--bg:var(--teal-soft);--c:var(--teal)}
+.c-sky{--fg:var(--sky);--bg:var(--sky-soft);--c:var(--sky)}
+.c-pink{--fg:var(--pink);--bg:var(--pink-soft);--c:var(--pink)}
+.c-marigold .tile strong,.tile.c-marigold strong{color:#B76E00}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tile.c-marigold strong{color:var(--marigold)}}
+:root[data-theme="dark"] .tile.c-marigold strong{color:var(--marigold)}
+</style>
+</head>
+<body id="top">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"><b style="background:var(--violet)"></b><b style="background:var(--coral)"></b><b style="background:var(--marigold)"></b></i>Varsha Hindupur</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <!-- Add your resume PDF to the repo and update this link -->
+      <li><a class="resume" href="resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Varsha <span>Hindupur</span></h1>
+      <p class="role">AI software engineer building generative AI and full-stack systems for financial services</p>
+      <p class="sub">Software Engineer 3 at Jack Henry with 8+ years shipping production systems in regulated industries, from credit union platforms to card rewards.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <div class="orgs" aria-label="Where I've worked and studied">
+        <a href="https://www.jackhenry.com/">Jack Henry</a>
+        <a href="https://www.capitalone.com/">Capital One</a>
+        <a href="https://www.northeastern.edu/">Northeastern University</a>
+        <a href="https://www.deloitte.com/">Deloitte</a>
+        <a href="https://www.capgemini.com/">Capgemini</a>
+      </div>
+    </div>
+    <div class="stream" aria-label="Career summary">
+      <div class="stream-head"><span class="live">career.events</span><span>newest first</span></div>
+      <div class="msg c-marigold"><b>Software Engineer 3 at Jack Henry</b><span>Jul 2025 to now, Symitar and JH Platform</span></div>
+      <div class="msg c-coral"><b>Full Stack Developer at Capital One</b><span>Feb 2024 to Jul 2025, Rewards and Credit Score</span></div>
+      <div class="msg c-violet"><b>Research Full Stack Developer at Northeastern</b><span>May 2023 to Jan 2024, with Prof. Kelly Wellman</span></div>
+      <div class="msg c-pink"><b>Research Data Scientist at Northeastern</b><span>Feb 2023 to Apr 2023, with Dr. Amy Pei</span></div>
+      <div class="msg c-teal"><b>Senior Software Engineer at Deloitte</b><span>2019 to 2022, credit-risk ML and microservices</span></div>
+      <div class="msg c-sky"><b>Python Developer at Capgemini</b><span>2017 to 2019, healthcare data systems</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="impact" aria-label="Highlights">
+    <div class="tile c-violet"><strong>500K</strong><span>API requests a day served on AWS Lambda at Capital One</span></div>
+    <div class="tile c-coral"><strong>2M+</strong><span>users on the Northeastern survey platform I built</span></div>
+    <div class="tile c-marigold"><strong>Hours to seconds</strong><span>runtime for Jack Henry's PCI data sanitization tool</span></div>
+    <div class="tile c-teal"><strong>4 hrs to 30 min</strong><span>deploy time after leading a microservices migration</span></div>
+  </div>
+</div>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about-grid">
+      <!-- To use a photo: replace VH with <img src="data_files/varsha.jpg" alt="Varsha Hindupur"> -->
+      <div class="portrait" aria-hidden="true"><div>VH</div></div>
+      <div>
+        <p>I'm a software engineer in Dallas, Texas, working across full-stack and platform engineering in financial services. At Jack Henry I build TypeScript/Lit screens on the JH Platform, Pub/Sub and change-data-capture pipelines, and data tools that handle millions of records.</p>
+        <p>I use generative AI in real delivery, not just demos: RAG pipelines, LLM orchestration, and AI-assisted development. One example is the Honeycomb MCP server I set up in Cursor, so the agent can query traces and isolate root causes without leaving the editor. I also help other engineers ramp up faster through mentoring, docs and reusable examples.</p>
+        <div class="facts">
+          <div class="fact c-violet"><strong>Northeastern University</strong><span>M.S. Information Systems, Boston</span></div>
+          <div class="fact c-coral"><strong>Mumbai University</strong><span>B.E. Information Technology</span></div>
+          <div class="fact c-teal"><strong>Certified</strong><span>AWS Solutions Architect Associate (2024), Azure Fundamentals (2020)</span></div>
+        </div>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/varsha-hindupur/">LinkedIn</a>
+          <a href="https://github.com/varshahindupur09">GitHub</a>
+          <a href="https://medium.com/@varsha.hindupur">Medium</a>
+          <a href="https://www.youtube.com/@VarshaHindupurCodes/videos">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="lede">The tools I reach for, grouped by the kind of problem they solve.</p>
+    <div class="skills">
+      <div class="skill c-violet">
+        <h3>AI and machine learning</h3>
+        <p>RAG pipelines, fine-tuned embeddings, LLM orchestration and agentic workflows, evaluated with LLM-as-judge and LangSmith.</p>
+        <ul class="tags"><li>RAG</li><li>LangChain</li><li>LangSmith</li><li>MCP</li><li>Llama</li><li>Gemini</li><li>Vertex AI</li><li>Bedrock</li><li>Hugging Face</li><li>ChromaDB</li><li>PyTorch</li><li>TensorFlow</li></ul>
+      </div>
+      <div class="skill c-coral">
+        <h3>Web and APIs</h3>
+        <p>Front ends and services for financial products, secured with OAuth 2.0 and JWT.</p>
+        <ul class="tags"><li>React</li><li>Next.js</li><li>Lit</li><li>Node.js</li><li>Spring Boot</li><li>FastAPI</li><li>Flask</li><li>Django</li><li>GraphQL</li><li>REST</li></ul>
+      </div>
+      <div class="skill c-teal">
+        <h3>Data and cloud</h3>
+        <p>Event pipelines, caching and infrastructure as code across all three major clouds.</p>
+        <ul class="tags"><li>AWS</li><li>GCP</li><li>Azure</li><li>Pub/Sub</li><li>Terraform</li><li>Kubernetes</li><li>Docker</li><li>PostgreSQL</li><li>DynamoDB</li><li>MongoDB</li><li>Redis</li><li>Snowflake</li></ul>
+      </div>
+      <div class="skill c-sky">
+        <h3>Languages</h3>
+        <p>Comfortable moving between typed services, scripting and data work.</p>
+        <ul class="tags"><li>Python</li><li>Go</li><li>Java</li><li>TypeScript</li><li>JavaScript</li><li>C#</li><li>SQL</li><li>Bash</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="lede">Most recent first.</p>
+    <ol class="timeline">
+      <li class="c-marigold"><div class="job">
+        <div class="job-top"><h3>Software Engineer 3</h3><span class="when">Jul 2025 to present</span></div>
+        <div class="where">Jack Henry &amp; Associates</div>
+        <ul>
+          <li>Designed search, verification, member and account-action screens as TypeScript/Lit pages on the JH Platform, integrating Picard and Symitar APIs.</li>
+          <li>Built Pub/Sub topics and change-data-capture pipelines, provisioning the infrastructure with Terraform.</li>
+          <li>Engineered a PCI sanitization tool for batch and streaming processing of millions of records, scheduled through OpCon, cutting runtime from hours to seconds.</li>
+          <li>Set up a Honeycomb MCP server in Cursor Agent so the agent can query runtime observability and isolate root causes from the editor.</li>
+        </ul>
+      </div></li>
+      <li class="c-coral"><div class="job">
+        <div class="job-top"><h3>Full Stack Developer</h3><span class="when">Feb 2024 to Jul 2025</span></div>
+        <div class="where">Capital One, Dallas, TX</div>
+        <ul>
+          <li>Refactored the Rewards Redemption front end in React and Redux, modularizing UI patterns and streamlining state.</li>
+          <li>Built Spring Boot microservices and OAuth 2.0/JWT authentication, reducing unauthorized-access incidents by 20%.</li>
+          <li>Supported up to 500K API requests a day with Lambda and API Gateway; reached sub-100ms queries with DynamoDB indexing and Redis.</li>
+          <li>Delivered domain-specific RAG with fine-tuned Hugging Face embeddings and orchestrated Llama, DeepSeek, Qwen and Gemini across SageMaker, Bedrock, Groq and Ollama.</li>
+          <li>Cut infrastructure provisioning time by 70% with Terraform and Helm, and mentored junior engineers on generative AI.</li>
+        </ul>
+      </div></li>
+      <li class="c-violet"><div class="job">
+        <div class="job-top"><h3>Research Full Stack Developer</h3><span class="when">May 2023 to Jan 2024</span></div>
+        <div class="where">Northeastern University, with Prof. Kelly Wellman</div>
+        <ul>
+          <li>Designed a MERN microservices survey platform with an AWS Bedrock Llama chatbot, supporting 2M+ users and a 4.7/5 feedback score.</li>
+          <li>Engineered auto-scaling on Elastic Beanstalk and contributed to a patent effort.</li>
+        </ul>
+      </div></li>
+      <li class="c-pink"><div class="job">
+        <div class="job-top"><h3>Research Data Scientist</h3><span class="when">Feb 2023 to Apr 2023</span></div>
+        <div class="where">Northeastern University, with Dr. Amy Pei</div>
+        <ul>
+          <li>Built a meeting-intelligence app processing audio and video with PyTorch at 92% accuracy, later extended into a multimodal network.</li>
+          <li>Deployed on Azure App Service with Azure DevOps and Blob Storage.</li>
+        </ul>
+      </div></li>
+      <li class="c-teal"><div class="job">
+        <div class="job-top"><h3>Senior Software Engineer</h3><span class="when">Mar 2019 to Aug 2022</span></div>
+        <div class="where">Deloitte, India</div>
+        <ul>
+          <li>Developed a credit-risk model with XGBoost and TensorFlow at 92% accuracy, reducing false positives.</li>
+          <li>Automated 250K+ daily records with Airflow and PySpark, replacing week-long manual workflows.</li>
+          <li>Built a real-time prediction system on Lambda and EventBridge, saving up to $8,000 a month.</li>
+          <li>Led a monolith-to-microservices migration that cut deployments from 4 hours to 30 minutes.</li>
+        </ul>
+      </div></li>
+      <li class="c-sky"><div class="job">
+        <div class="job-top"><h3>Python Developer</h3><span class="when">Mar 2017 to Mar 2019</span></div>
+        <div class="where">Capgemini, India</div>
+        <ul>
+          <li>Built a HIPAA-compliant healthcare data system with Python, Pandas and NumPy, improving workflow efficiency by 40%.</li>
+          <li>Launched a Health Information Exchange on Azure Functions and cut initial load time by 3.2 seconds.</li>
+        </ul>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block tint" id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="lede">Things I've built outside work and in research. Select one for details.</p>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button class="c-violet" aria-pressed="false" data-f="ai">Gen AI</button>
+      <button class="c-teal" aria-pressed="false" data-f="cloud">Cloud</button>
+      <button class="c-sky" aria-pressed="false" data-f="data">ML and data</button>
+    </div>
+    <div class="projects" id="projectGrid"></div>
+  </div>
+</section>
+
+<section class="block" id="writing">
+  <div class="wrap">
+    <h2>Writing and videos</h2>
+    <p class="lede">I write about cloud deployments and data engineering, and record walkthroughs of my Gen AI projects.</p>
+    <div class="writing">
+      <article class="post c-violet"><div class="src">Medium</div>
+        <h3><a href="https://medium.com/@varsha.hindupur/ml-prediction-model-deployment-in-aws-eks-75d017507a61">ML prediction model deployment in AWS EKS</a></h3>
+        <p>Deploying a model on EKS with Terraform, Helm and kubectl.</p></article>
+      <article class="post c-coral"><div class="src">Medium</div>
+        <h3><a href="https://medium.com/@varsha.hindupur/from-concept-to-deployment-leveraging-aws-for-a-large-scale-survey-application-349eed74ec3f">From concept to deployment: AWS for a large-scale survey app</a></h3>
+        <p>The architecture behind a high-volume survey platform.</p></article>
+      <article class="post c-teal"><div class="src">Medium</div>
+        <h3><a href="https://medium.com/@varsha.hindupur/summarizing-lecture-from-data-ai-world-tour-by-databricks-delta-live-tables-a-to-z-best-practices-479fc704fbd2">Delta Live Tables best practices</a></h3>
+        <p>Notes from the Databricks Data + AI World Tour.</p></article>
+      <article class="post c-marigold"><div class="src">YouTube</div>
+        <h3><a href="https://www.youtube.com/watch?v=UFHJq29b8rk">Patient Triage with RAG</a></h3>
+        <p>Prioritizing patients by severity with a RAG pipeline.</p></article>
+      <article class="post c-pink"><div class="src">YouTube</div>
+        <h3><a href="https://www.youtube.com/watch?v=HRHBa0tjPbU">Movie Mania: a RAG chatbot</a></h3>
+        <p>LangChain and FAISS, deployed on GCP Vertex AI.</p></article>
+      <article class="post c-sky"><div class="src">GitHub</div>
+        <h3><a href="https://github.com/varshahindupur09/system_design">System design notes</a></h3>
+        <p>My knowledge base of high-level and low-level design patterns.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's talk</h2>
+      <p class="lede">I'm happy to talk about AI engineering, platform work in financial services, or something you're building.</p>
+      <a class="big" href="mailto:varshashindupur@gmail.com">varshashindupur@gmail.com</a>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/varsha-hindupur/">LinkedIn</a>
+        <a href="https://github.com/varshahindupur09">GitHub</a>
+        <a href="https://varshahindupur09.github.io">varshahindupur09.github.io</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Varsha Hindupur, Dallas, TX</span>
+    <button class="theme-toggle" id="themeToggle">Switch theme</button>
+  </div>
+</footer>
+
+<dialog id="projDialog" aria-labelledby="dlgTitle">
+  <div class="dlg">
+    <button class="close" aria-label="Close project details" id="dlgClose">×</button>
+    <div class="kind" id="dlgKind"></div>
+    <h3 id="dlgTitle"></h3>
+    <p id="dlgBody"></p>
+    <ul class="tags" id="dlgTags"></ul>
+    <div class="dlg-actions" id="dlgLinks"></div>
+  </div>
+</dialog>
+
+<script>
+const GH="https://github.com/varshahindupur09/";
+const COLOR={ai:"c-violet",cloud:"c-teal",data:"c-sky"};
+const projects=[
+ {f:"ai",star:true,kind:"AI tooling at Jack Henry",title:"Honeycomb MCP server in Cursor",
+  short:"Lets the coding agent query production traces and find root causes without leaving the editor.",
+  body:"I provisioned and set up a Honeycomb MCP (Model Context Protocol) server inside Cursor Agent, connecting runtime observability to the editor. The agent can query Honeycomb traces directly and isolate root causes as part of the workflow, so engineers don't have to switch over to the Honeycomb UI to debug.",
+  tags:["MCP","Cursor Agent","Honeycomb","Observability","Agentic workflows"],
+  links:[]},
+ {f:"ai",star:true,kind:"Gen AI agents",title:"Patient Triage GenAI Agents",
+  short:"Prioritizes patients by medical severity with a RAG pipeline and Llama 3.2.",
+  body:"A Next.js front end over a RAG pipeline that retrieves relevant clinical context from ChromaDB and uses Llama 3.2 to assign triage levels by medical severity.",
+  tags:["Next.js","Llama 3.2","ChromaDB","RAG"],
+  links:[["View on GitHub",GH+"Agents/tree/main/Patient-Triage-RAG"],["Watch the demo","https://www.youtube.com/watch?v=UFHJq29b8rk"]]},
+ {f:"cloud",star:true,kind:"Cloud",title:"E-commerce on Kubernetes",
+  short:"A React storefront on EKS that auto-scales in about two minutes.",
+  body:"A React, Redux and Material UI storefront deployed on EKS with images in ECR and infrastructure in Terraform. The cluster auto-scales in roughly two minutes, and parts of the workflow are Anthropic-assisted.",
+  tags:["React","Redux","Material UI","Terraform","EKS","ECR"],
+  links:[["View on GitHub",GH]]},
+ {f:"cloud",star:true,kind:"Cloud",title:"Multi-AZ cloud deployment",
+  short:"A highly available Express and PostgreSQL app on GCP built for disaster recovery.",
+  body:"An Express and PostgreSQL application deployed across multiple availability zones on GCP, with machine images built by Packer and infrastructure defined in Terraform for disaster recovery and high availability.",
+  tags:["GCP","Packer","Terraform","Express","PostgreSQL"],
+  links:[["View on GitHub",GH]]},
+ {f:"data",star:true,kind:"Data engineering",title:"Airflow weather data pipeline",
+  short:"Streaming ETL for weather data with Airflow, Redis and OpenAI.",
+  body:"A streaming ETL pipeline orchestrated in Airflow on AWS, landing data in PostgreSQL with Redis caching, OpenAI-powered features and Docker packaging.",
+  tags:["Python","Airflow","AWS","PostgreSQL","OpenAI","Redis","Docker"],
+  links:[["View on GitHub",GH+"Weather-Explorer-Interactive-Weather-Data-Visualization"]]},
+ {f:"ai",kind:"Gen AI",title:"Domain-specific embedding optimization",
+  short:"Fine-tuned embedding models with contrastive learning to improve retrieval.",
+  body:"Fine-tuned embedding models on 5,000 synthetic domain records using contrastive learning with positive and negative pairs, RAG-based dataset synthesis and synthetic data generation, improving retrieval accuracy.",
+  tags:["Hugging Face","Llama 3 70B (Groq)","ChromaDB","Contrastive learning"],
+  links:[["View on GitHub",GH+"composables-support/tree/main/Domain-Specific%20Vector%20Embedding%20Optimization"]]},
+ {f:"ai",kind:"Gen AI",title:"Meeting Intelligence",
+  short:"Turns meeting audio and video into takeaways and action items.",
+  body:"An LLM-powered summarizer that transcribes audio and video with Whisper, then uses custom prompt engineering to pull out key takeaways, action items and insights.",
+  tags:["GPT-4","LangChain","Whisper","Streamlit"],
+  links:[["View on GitHub",GH+"Meeting-Intelligence-Prompt-Engineering-and-Gen-AI-for-Summarization"]]},
+ {f:"ai",kind:"Gen AI",title:"Movie Mania RAG chatbot",
+  short:"A context-aware chatbot with LangChain and FAISS on Vertex AI.",
+  body:"End-to-end retrieval-augmented generation: document loading, FAISS vector indexing and LangChain query processing, deployed on GCP Vertex AI.",
+  tags:["LangChain","FAISS","Vertex AI"],
+  links:[["View on GitHub",GH+"PromptEngineeringInAI/tree/main/RAG_CHATBOT"],["Watch the demo","https://www.youtube.com/watch?v=HRHBa0tjPbU"]]},
+ {f:"cloud",kind:"Cloud and MLOps",title:"ML model deployment on EKS",
+  short:"Deploys a price prediction model on EKS with Terraform and Helm.",
+  body:"Deploys a machine learning model to Amazon EKS with kubectl and Helm, infrastructure provisioned in Terraform, VPC configuration and APIs for downstream data.",
+  tags:["AWS EKS","Terraform","Helm"],
+  links:[["View on GitHub",GH+"housing_price_prediction_model_deployment"],["Read the article","https://medium.com/@varsha.hindupur/ml-prediction-model-deployment-in-aws-eks-75d017507a61"]]},
+ {f:"cloud",kind:"Cloud and ML",title:"Sensitive Data Shield",
+  short:"Detects sensitive data in real time, deployed on GKE with Grafana.",
+  body:"A real-time sensitive data protection platform built on a token classification model, deployed on Google Kubernetes Engine and monitored with Grafana.",
+  tags:["TensorFlow","GKE","Grafana"],
+  links:[["View on GitHub",GH+"Sensitive-Data-Shield-AI-Anomaly-Detection-Platform"]]},
+ {f:"data",kind:"ML and HPC",title:"Lung and colon cancer detection",
+  short:"Multi-GPU image classification reaching 98.7% accuracy.",
+  body:"A CUDA-accelerated cancer prediction system using hybrid Dask and PyTorch DDP pipelines with multi-GPU parallelism, reaching 98.7% accuracy.",
+  tags:["PyTorch DDP","Dask","CUDA"],
+  links:[["View on GitHub",GH+"Cancer-Detection-with-High-Performance-Computing-HPC"]]},
+ {f:"data",kind:"ML",title:"AirCast",
+  short:"Forecasts air quality with an LSTM and a React dashboard.",
+  body:"An LSTM model predicting air quality with an RMSE of 0.8, fed by real-time data pipelines and shown in a React dashboard.",
+  tags:["LSTM","React","Data pipelines"],
+  links:[["View on GitHub",GH+"AirCast-Predicting-Air-Quality-Using-Machine-Learning"]]}
+];
+const grid=document.getElementById("projectGrid");
+projects.forEach((p,i)=>{
+  const b=document.createElement("button");
+  b.className="proj "+COLOR[p.f]; b.dataset.f=p.f;
+  b.innerHTML=(p.star?'<span class="star">Featured</span>':'')+`<span class="kind">${p.kind}</span><h3>${p.title}</h3><p>${p.short}</p><span class="more">View details</span>`;
+  b.addEventListener("click",()=>openProj(i));
+  grid.appendChild(b);
+});
+const dlg=document.getElementById("projDialog");
+function openProj(i){
+  const p=projects[i];
+  dlg.className=COLOR[p.f];
+  document.getElementById("dlgKind").textContent=p.kind;
+  document.getElementById("dlgTitle").textContent=p.title;
+  document.getElementById("dlgBody").textContent=p.body;
+  document.getElementById("dlgTags").innerHTML=p.tags.map(t=>`<li>${t}</li>`).join("");
+  document.getElementById("dlgLinks").innerHTML=p.links.map((l,j)=>`<a class="btn ${j===0?'solid':''}" href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join("");
+  dlg.showModal();
+}
+document.getElementById("dlgClose").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+document.querySelectorAll(".filters button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed","false"));
+    btn.setAttribute("aria-pressed","true");
+    const f=btn.dataset.f;
+    grid.querySelectorAll(".proj").forEach(c=>c.hidden=!(f==="all"||c.dataset.f===f));
+  });
+});
+const menuBtn=document.querySelector(".menu-btn"),links=document.getElementById("navlinks");
+menuBtn.addEventListener("click",()=>{const o=links.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o)});
+links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{links.classList.remove("open");menuBtn.setAttribute("aria-expanded","false")}));
+const root=document.documentElement;
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t}catch(e){}
+document.getElementById("themeToggle").addEventListener("click",()=>{
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme=dark?"light":"dark";
+  try{localStorage.setItem("theme",root.dataset.theme)}catch(e){}
+});
+</script>
+</body>
+</html>
